@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Amaranth&display=swap');
+
+
+
+body{
+    margin:0;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    background-image: url("images/cafebg.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+#logoheadercafe{
+    width: 50%;
+    height: 40;
+    padding-left: 25%;
+}
+
+h1{
+    font-family: 'Pacifico', cursive;
+    font-size: 50px;
+    padding-top: 25%;
+    /*margin-left: -250px;*/
+    margin-left: -15%;
+    padding-right: 374px;
+}
+
+#h1ins{
+    font-family: 'Pacifico', cursive;
+    font-size: 50px;
+    padding-top: 5%;
+    margin-top: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+ul{
+    list-style: none;
+    font-size: 40px;
+    font-family: 'Bebas Neue', cursive;
+    padding-left:0;
+    width: 100%;
+}
+
+li{
+    padding-bottom: 1%;
+    width: 100%;
+}
+
+ul a:link{
+    text-decoration: none;
+    color:black;
+}
+
+ul a:visited{
+    text-decoration:none;
+    color:black;
+}
+
+ul a:active{
+    text-decoration: none;
+    color:black;
+}
+
+li:hover{
+    background-color:rgba(255, 255, 255, 0.671);    
+    width: 100%;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 20%;
+    height: 100%;
+    border-right: 3px solid black;
+    background-color: #804826;
+}
+
+nav{
+    display: flex;
+    flex-direction: column;
+}
+
+.boutonlogout{
+    border: none;
+    background-color: #804826;
+    font-size: 40px;
+    font-family: 'Bebas Neue', cursive;
+    padding:0;
+}
+
+.boutonlogout:hover{
+    border: none;
+    background-color:rgba(255, 255, 255, 0.671);
+    width: 100%;
+    padding:0;
+}
+
+.logoutform{
+    padding:0;
+
+}
+
+#indexarticle{
+    font-size: 25px;
+    max-width: 50%;
+    font-family: 'Amaranth', sans-serif;
+}
+
+#connexionformspan{
+    font-size: 35px;
+}
+
+#connexionform{
+    background-color:rgba(255, 255, 255, 0.671);
+    padding: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top:65%;
+    border: 2px solid black;
+    border-radius: 25px 25px 25px 25px;
+    font-family: 'Bebas Neue', cursive;
+
+}
+
+.inputco{
+    border-radius:25px 25px 25px 25px;
+    padding: 10%;
+    font-family: 'Bebas Neue', cursive;
+    border:2px solid black;
+}
+
+main{
+    display:flex;
+    width: 80%;
+    height: 100%;
+    margin-left: 22%;
+    justify-content: center;
+}
+
+#sectionformins{
+
+}
+
+input{
+    border-radius: 25px 25px 25px 25px;
+    padding:2%;
+    border:2px solid black;
+    background-color: white;
+    font-family:'Bebas Neue', cursive;
+    font-size: 15px;
+}
+
+#notallowed2{
+    font-family: 'Bebas Neue', cursive;
+    border:5px solid red;
+    font-size: 50px;
+    
+}
+
+#forminscription{
+    background-color:rgba(255, 255, 255, 0.671);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top:10%;
+    padding-bottom: 10%;
+    border-radius: 25px 25px 25px 25px;
+    border:2px solid black;
+}
+
+#notsamepswd{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 30px;
+    margin-bottom: 2%;
+    background-color:rgba(255, 255, 255, 0.671);
+    text-align: center;
+    border-radius: 25px 25px 25px 25px;
+    border:3px solid red;
+}
+
+#messageform{
+    margin-left: 22%;
+    display: flex;
+    flex-direction: row;
+
+}
+
+#chat{
+    background-color:rgba(255, 255, 255, 0.671);
+    height: 937px;
+    padding-right: 10%;
+    padding-left: 10%;
+    border-right: 3px solid black;
+    border-left: 3px solid black;
+    overflow:scroll;
+    text-align: center;
+}
+
+#messageh1{
+    padding-left: 10%;
+}
+
+label{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 25px;
+}
+
+textarea{
+    border-radius: 25px 25px 25px 25px;
+    padding: 3%;
+    resize: none;
+}
+
+#connexionnotallowed{
+    font-size: 50px;
+    background-color:rgba(255, 255, 255, 0.671);
+    border-radius: 25px 25px 25px 25px;
+}
+
+#connexionform2{
+    background-color:rgba(255, 255, 255, 0.671);
+    display: flex;
+    padding:10%;
+    flex-direction: column; 
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 25px 25px 25px 25px;
+    font-family: 'Bebas Neue', cursive;
+    text-align: center;
+}
+
+#textinputlogin{
+    text-align: center;
+}
