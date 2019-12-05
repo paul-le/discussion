@@ -31,7 +31,7 @@
                 </nav>
             </header>
             <main id="messageform">
-                <section>
+                <section id="boitedetexte">
                     <article>
                         <?php if (isset($_SESSION['login'])){
                             if ( isset($_POST['envoyer']) == true )
@@ -50,8 +50,10 @@
                     </article>
                 </section>
                 <section id="chat">
-                    <?php include("discussioninclude.php") ?>
+                    <article>
+                        <?php include("discussioninclude.php") ?>
+                    </article>
                 </section>
             </main>
         </body>
-    </html>s
+    </html>

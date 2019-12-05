@@ -29,33 +29,35 @@
         $query = mysqli_query($connexion, $requete);
         $resultat = mysqli_fetch_assoc($query);
 
-    if(isset($_POST['modifier']))
-    {
-        $requeteupdate = "UPDATE utilisateurs SET login='".$_POST['login']."' WHERE login = '".$_SESSION['login']."'";
-
-        if($resultat['login'] != $_POST['login'])
+        if(isset($_POST['modifier']))
         {
-            mysqli_query($connexion,$requeteupdate);
-            $_SESSION['login'] = $_POST['login'];
-            header('Location: profil.php');
-        }
-        elseif($resultat['password'] != $_POST['password'])
-        {
-            if($_POST['password'] != NULL)
+            if($_POST['password'] != $_POST['passwordcon'])
             {
-            $pwd=$_POST['password'];
-            $pwd=password_hash($pwd,PASSWORD_BCRYPT,array('cost'=>12));
-            $requeteupdate = "UPDATE utilisateurs SET password='".$pwd."' WHERE login = '".$_SESSION['login']."'";
-            mysqli_query($connexion,$requeteupdate);
-            header('Location: profil.php');
+                echo "Les mots de passe sont différents !";
             }
-            elseif($_POST['password'] == NULL)
-            {}
+            elseif(isset($_POST['password']) && !empty($_POST['password']))
+            {
+                $mdp = password_hash($_POST['password'], PASSWORD_BCRYPT, array('cost' => 12));
+                $updatemdp = "UPDATE utilisateurs SET password = '$mdp' WHERE id = '" . $resultat['id'] . "'";
+                $query2 = mysqli_query($connexion, $updatemdp);
+                header('Location:profil.php');
+            }
+            $login = $_POST["login"];
+            $req = "SELECT login FROM utilisateurs WHERE login = '$login'";
+            $req3 = mysqli_query($connexion, $req);
+            $logcheck = mysqli_fetch_all($req3);
+                if(!empty($veriflog))
+                {
+                    ?>
+                    <p>Login déjà utilisé, requête refusée.<br /></p>
+                    <?php
+                }
+            if(empty($logcheck))
+                {
+                    $updatelog = "UPDATE utilisateurs SET login ='" . $_POST['login'] . "' WHERE id = '" . $resultat['id'] . "'";
+                    $querylog = mysqli_query($connexion, $updatelog);
+                    $_SESSION['login']=$_POST['login'];
+                    header("Location:profil.php");
+                }
         }
-        else
-        {
-            echo " Impossible de changer d'informations ";
-        }
-    }
-
-?>
+        ?>

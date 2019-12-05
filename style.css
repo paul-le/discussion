@@ -196,15 +196,26 @@ input{
 
 }
 
+#boitedetexte{
+    margin-left: 5%;
+}
+
 #chat{
-    background-color:rgba(255, 255, 255, 0.671);
+    background-color:rgba(255, 255, 255, 0.85);
     height: 937px;
     padding-right: 10%;
-    padding-left: 10%;
+    padding-left: 2%;
     border-right: 3px solid black;
     border-left: 3px solid black;
     overflow:scroll;
-    text-align: center;
+    text-align: left;
+    width: 450px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+#chatstyle{
+    font-family: Arial;
+    max-width: 150px;
 }
 
 #messageh1{

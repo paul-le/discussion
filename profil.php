@@ -43,6 +43,7 @@
                         <form id="connexionform2" method="POST" action="profil.php">
                             <label>Login</label><br><br> <input id="textinputlogin" type="text" name="login" value= " <?php echo $resultat['login']?>" required><br><br>
                             <label>Password</label><br><br> <input type="password" name="password" ><br><br>
+                            <label>Password confirmation</label><br><br> <input type="password" name="passwordcon" ><br><br>
                             <input type="submit" value="Changer mes données" name="modifier">
                         </form>
                     <?php } else { ?>

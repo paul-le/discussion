@@ -18,9 +18,9 @@
                 $date2 = date("d-m-Y H:i:s",strtotime($date));
                 if($resultat[$i][2] == $resultat2[$i2][0])
                 {
-                echo "".$date2." <b>|</b> ";
+                echo "".$date2." <b>|||</b> ";
                 echo "<b> ".$resultat2[$i2][1]."</b> : ";
-                echo "".$resultat[$i][1]."<br><br>";
+                echo "<span id=\"chatstyle\">".$resultat[$i][1]."</span><br>";
                 
                 }
                 $i2++;
