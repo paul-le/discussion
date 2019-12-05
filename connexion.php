@@ -4,7 +4,7 @@
 <!DOCTYPE html>
     <html>
         <head>
-	        <title>Accueil</title>
+	        <title>Connexion</title>
             <link rel="stylesheet" href="style.css">
         </head>
         <body>

@@ -39,7 +39,7 @@
                         $query = mysqli_query($connexion, $requete);
                         $resultat = mysqli_fetch_assoc($query);
                 ?>
-                    <h1>Modifier mon profil</h1>
+                    <h2 id="modifierprofil">Modifier mon profil</h2>
                         <form id="connexionform2" method="POST" action="profil.php">
                             <label>Login</label><br><br> <input id="textinputlogin" type="text" name="login" value= " <?php echo $resultat['login']?>" required><br><br>
                             <label>Password</label><br><br> <input type="password" name="password" ><br><br>

@@ -30,30 +30,32 @@
                     }?>
                 </nav>
             </header>
-            <main id="messageform">
-                <section id="boitedetexte">
-                    <article>
-                        <?php if (isset($_SESSION['login'])){
-                            if ( isset($_POST['envoyer']) == true )
-                            {
-                            $connexion = mysqli_connect("localhost", "root","", "discussion"); 
-                            $requete = "INSERT INTO messages (message,id_utilisateur,date) VALUES('".$_POST['message']."','".$_SESSION['id']."',NOW())";
-                            $query = mysqli_query($connexion, $requete);
-                            }?>
-                        <h1 id="messageh1">Envoyer un message</h1>
-                            <form method="POST" action="discussion.php">
-                                <br><br><textarea rows="10" cols="45" name="message" placeholder="Votre message" required></textarea><br><br>
-                                    <input type="submit" value="Envoyer le message" name="envoyer">
-                                
-                        <?php } else { ?> <span id="connexionnotallowed">Vous n'avez pas accès à cette page</span><?php }?>
-                            </form>
-                    </article>
-                </section>
+            <main id="messageform">                
                 <section id="chat">
                     <article>
                         <?php include("discussioninclude.php") ?>
                     </article>
                 </section>
+                <section id="boitedetexte">
+                    <article>
+                        <?php if (isset($_SESSION['login'])){
+                            if (isset($_POST['envoyer']))
+                            {
+                            $connexion = mysqli_connect("localhost", "root","", "discussion"); 
+                            $requete = "INSERT INTO messages (message,id_utilisateur,date) VALUES('".$_POST['message']."','".$_SESSION['id']."',NOW())";
+                            $query = mysqli_query($connexion, $requete);
+                            }?>
+                        <h2 id="messageh2">Envoyer un message</h2>
+                            <form method="POST" action="">
+                                <br><br><textarea rows="10" cols="45" name="message" placeholder="Votre message" required></textarea><br><br>
+                                    <input type="submit" value="Envoyer le message" name="envoyer">
+                                
+                        <?php } else { ?> <span id="connexionnotallowed">Vous n'avez pas accès à cette page</span><?php }
+                            if (isset($_POST['envoyer'])){header('Location: discussion.php');}?>
+                            </form>
+                    </article>
+                </section>
+
             </main>
         </body>
     </html>

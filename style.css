@@ -135,7 +135,7 @@ nav{
 .inputco{
     border-radius:25px 25px 25px 25px;
     padding: 10%;
-    font-family: 'Bebas Neue', cursive;
+    font-family: Arial;
     border:2px solid black;
 }
 
@@ -147,16 +147,12 @@ main{
     justify-content: center;
 }
 
-#sectionformins{
-
-}
-
 input{
     border-radius: 25px 25px 25px 25px;
     padding:2%;
     border:2px solid black;
     background-color: white;
-    font-family:'Bebas Neue', cursive;
+    font-family:Arial;
     font-size: 15px;
 }
 
@@ -165,6 +161,11 @@ input{
     border:5px solid red;
     font-size: 50px;
     
+}
+
+#modifierprofil{
+    font-family: 'Pacifico', cursive;
+    font-size: 50px;
 }
 
 #forminscription{
@@ -190,9 +191,9 @@ input{
 }
 
 #messageform{
-    margin-left: 22%;
+    margin-left: 20%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 
 }
 
@@ -202,14 +203,14 @@ input{
 
 #chat{
     background-color:rgba(255, 255, 255, 0.85);
-    height: 937px;
+    height: 400px;
     padding-right: 10%;
     padding-left: 2%;
     border-right: 3px solid black;
     border-left: 3px solid black;
     overflow:scroll;
     text-align: left;
-    width: 450px;
+    width: auto;
     font-family: 'Bebas Neue', cursive;
 }
 
@@ -218,8 +219,10 @@ input{
     max-width: 150px;
 }
 
-#messageh1{
+#messageh2{
     padding-left: 10%;
+    font-family: 'Pacifico', cursive;
+    font-size: 40px;
 }
 
 label{
@@ -247,7 +250,7 @@ textarea{
     justify-content: center;
     border: 2px solid black;
     border-radius: 25px 25px 25px 25px;
-    font-family: 'Bebas Neue', cursive;
+    font-family: Arial;
     text-align: center;
 }
 

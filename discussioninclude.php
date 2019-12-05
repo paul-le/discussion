@@ -1,4 +1,5 @@
 <?php
+        
                 $connexion = mysqli_connect("localhost", "root", "", "discussion");
                 $tablogin = "SELECT id,login FROM utilisateurs";
                 $tabcomm = "SELECT * FROM messages ORDER BY date DESC";
