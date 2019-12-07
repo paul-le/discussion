@@ -1,10 +1,11 @@
 <?php
-    session_start();
+session_start();
 ?>
+
 <!DOCTYPE html>
     <html>
         <head>
-	        <title>Accueil</title>
+            <title>Profil</title>
             <link rel="stylesheet" href="style.css">
         </head>
         <body>
@@ -13,7 +14,8 @@
                 <nav>
                     <ul>
                         <li><a href="index.php">Accueil</a></li>
-                        <li><a href="discussion.php">Discussion</a></li>
+                        <?php if(isset($_SESSION['login'])){?> <li><a href="discussion.php">Discussion</a></li>
+                        <?php } else {?><li><a href="connexion.php">Discussion</a></li><?php }?>
                         <?php if(!isset($_SESSION['login'])) {?>
                         <li><a href="inscription.php">Inscription</a></li>
                         <li><a href="connexion.php">Connexion</a></li>
@@ -30,27 +32,10 @@
                 </nav>
             </header>
             <main>
-                <section>
-                <?php
-                    include("profilinclude.php");
-                    if ( isset($_SESSION['login']) == true ){
-                        $connexion = mysqli_connect("localhost", "root","", "discussion");
-                        $requete = "SELECT * FROM utilisateurs WHERE login='".$_SESSION['login']."'";
-                        $query = mysqli_query($connexion, $requete);
-                        $resultat = mysqli_fetch_assoc($query);
-                ?>
-                    <h2 id="modifierprofil">Modifier mon profil</h2>
-                        <form id="connexionform2" method="POST" action="profil.php">
-                            <label>Login</label><br><br> <input id="textinputlogin" type="text" name="login" value= " <?php echo $resultat['login']?>" required><br><br>
-                            <label>Password</label><br><br> <input type="password" name="password" ><br><br>
-                            <label>Password confirmation</label><br><br> <input type="password" name="passwordcon" ><br><br>
-                            <input type="submit" value="Changer mes données" name="modifier">
-                        </form>
-                    <?php } else { ?>
-                        <article>
-                    <span id="notallowed2"> Vous n'avez pas accès à cette page </span><?php }?>
-                        </article>
-                </section>
-            </main>
-        </body>
-    </html>
+                <section id="sectionprofil">
+                    <h2 id="messageh2">Modifier mon profil</h2>
+            <?php include("profilinclude.php");?>
+        </section>
+        </main>
+    </body>
+</html>
